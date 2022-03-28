@@ -8,13 +8,14 @@ $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
 let htmlCode = ""
 
 for (let i = 8; i < 16; i++) {
+    let dailyPlans = localStorage.getItem(i) || "What is your Schedule?"
     htmlCode += `
         <div id="hour-row-${i}" class="row">
             <div id="daytime-${i}" class="col-3">
                 ${i}
             </div>
             <textarea id="cal-imput-${i}" class="col-6">
-              Write Schedule
+              ${dailyPlans}
              </textarea>
 
             <button id="icon-select-${i}" class="col-3 select-icon">
@@ -32,7 +33,8 @@ $("#cal-rows").on("click",".select-icon",function(){
     let hourRep = $(this).siblings("textarea").attr("id").split("-")[2]
     console.log(planSelect, hourRep)
     localStorage.setItem(hourRep, planSelect);
-})
+});
+
 //date picker 
 // Data Picker Initialization
 // $('.datepicker').datepicker({
