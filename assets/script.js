@@ -31,6 +31,7 @@ $("#cal-rows").on("click",".select-icon",function(){
     let planSelect = $(this).siblings("textarea").val();
     let hourRep = $(this).siblings("textarea").attr("id").split("-")[2]
     console.log(planSelect, hourRep)
+    localStorage.setItem(hourRep, planSelect);
 })
 //date picker 
 // Data Picker Initialization
