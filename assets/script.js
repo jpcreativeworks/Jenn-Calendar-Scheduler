@@ -6,3 +6,8 @@ let secondsId = setInterval(() => $("#currentDay").html(moment().format('MMMM Do
 //current time
 $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
+//date picker 
+// Data Picker Initialization
+$('.datepicker').datepicker({
+    inline: true
+  });
