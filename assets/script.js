@@ -20,10 +20,18 @@ for (let i = 7; i < 20; i++) {
     } else {
         classColor ="bg-success"
     }
+    let displayHour = ""
+    if (i < 12 ) {
+        displayHour = i + ":00 AM"
+    } else if (i == 12) {
+        displayHour = i + "Noon"
+    } else {
+        displayHour = (i - 12 ) + ":00 PM"
+    }
     htmlCode += `
         <div id="hour-row-${i}" class="row ${classColor}">
             <div id="daytime-${i}" class="col-3">
-                ${i}
+                ${displayHour}
             </div>
             <textarea id="cal-imput-${i}" class="col-6">
               ${dailyPlans}
