@@ -1,16 +1,27 @@
 // this repeating the calendar rows
 
+
+
 let calendarRows = $("#cal-rows") 
 let secondsId = setInterval(() => $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a')), 10)
 // console.log("calendarRows", calendarRows)
 //current time
 $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
 let htmlCode = ""
+let currentHour = moment().hours()
 
-for (let i = 8; i < 16; i++) {
-    let dailyPlans = localStorage.getItem(i) || "What is your Schedule?"
+for (let i = 7; i < 20; i++) {
+    let dailyPlans = localStorage.getItem(i) || "What is your Schedule?";
+    let classColor =""
+    if(i < currentHour){
+        classColor ="bg-secondary"
+    } else if (i === currentHour){
+        classColor ="bg-danger"
+    } else {
+        classColor ="bg-success"
+    }
     htmlCode += `
-        <div id="hour-row-${i}" class="row">
+        <div id="hour-row-${i}" class="row ${classColor}">
             <div id="daytime-${i}" class="col-3">
                 ${i}
             </div>
@@ -34,6 +45,7 @@ $("#cal-rows").on("click",".select-icon",function(){
     console.log(planSelect, hourRep)
     localStorage.setItem(hourRep, planSelect);
 });
+
 
 //date picker 
 // Data Picker Initialization
