@@ -16,3 +16,4 @@ a great way to stay orgainzed!
 ![Github](https://github.com/jpcreativeworks/Jenn-Calendar-Scheduler.git)
 ![Live Link] (https://jpcrreativeworks.github.io/Jenn-Calendar-Scheduler)
 
+![screenshot](./assets/_Jenn-Calendar-Scheduler_index.html.png)
