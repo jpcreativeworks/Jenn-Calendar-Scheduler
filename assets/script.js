@@ -1,4 +1,4 @@
-// this repeating the calendar rows
+
 //variables
 let calendarRows = $("#cal-rows") 
 let secondsId = setInterval(() => $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a')), 10)
@@ -35,7 +35,7 @@ for (let i = 7; i < 20; i++) {
              </textarea>
 
             <button id="icon-select-${i}" class="col-3 select-icon">
-                Select Icon
+                📝  
             </button>
         </div>
     `
